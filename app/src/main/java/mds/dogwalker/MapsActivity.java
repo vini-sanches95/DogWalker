@@ -1,7 +1,10 @@
 package mds.dogwalker;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,4 +46,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+
+    public void AddPoop(View view){
+        Toast.makeText(MapsActivity.this, "Poo Added!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void AddPee(View view){
+        Toast.makeText(MapsActivity.this, "Pee Added!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void BurgerMenu(View view){
+        Toast.makeText(MapsActivity.this, "Burger menu works!", Toast.LENGTH_SHORT).show();
+    }
+
 }
