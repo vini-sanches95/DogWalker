@@ -59,4 +59,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toast.makeText(MapsActivity.this, "Burger menu works!", Toast.LENGTH_SHORT).show();
     }
 
+    public void Start(View view){
+        View stop = findViewById(R.id.StopButton);
+        View start = findViewById(R.id.StartButton);
+        stop.setVisibility(View.VISIBLE);
+        start.setVisibility(View.INVISIBLE);
+    }
+
+    public void Stop(View view){
+        View stop = findViewById(R.id.StopButton);
+        View start = findViewById(R.id.StartButton);
+        start.setVisibility(View.VISIBLE);
+        stop.setVisibility(View.INVISIBLE);
+    }
+
 }
+
