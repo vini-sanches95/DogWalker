@@ -48,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 } else {
                                     Intent intent = new Intent(SignUpActivity.this, AuthenticationActivity.class);
                                     intent.putExtra("emailCadastrado", email.getText().toString());
-                                    intent.putExtra("senhaCadastrada", email.getText().toString());
+                                    intent.putExtra("senhaCadastrada", senha.getText().toString());
                                     startActivity(intent);
                                     finish();
                                 }
