@@ -19,63 +19,125 @@
             android:layout_height="match_parent"
             tools:context="mds.dogwalker.MapsActivity" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/poopButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentRight="true"
-            android:src="@mipmap/poop"
-            app:civ_border_width="8dp"
-            app:civ_border_color="#FF000000"
             android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:onClick="AddPoop"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="5dp" />
+            android:src="@mipmap/poop"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="8dp" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/peeButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@mipmap/pee"
-            app:civ_border_width="8dp"
-            app:civ_border_color="#FF000000"
-            android:layout_below="@id/poopButton"
             android:layout_alignParentRight="true"
+            android:layout_below="@id/poopButton"
+            android:layout_margin="5dp"
             android:clickable="true"
             android:onClick="AddPee"
-            android:layout_margin="5dp"/>
+            android:src="@mipmap/pee"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="8dp" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/menuButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_menu_black_24dp"
-            app:civ_border_width="8dp"
-            app:civ_border_color="#FF000000"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:onClick="BurgerMenu"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"/>
+            android:src="@drawable/ic_menu_black_24dp"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="0dp" />
 
 
     </RelativeLayout>
-
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1">
 
 
+        <TextView
+            android:id="@+id/distanceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/timeLabel"
+            android:layout_alignBottom="@+id/timeLabel"
+            android:layout_marginEnd="21dp"
+            android:layout_toStartOf="@+id/StartButton"
+            android:text="Distance"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/StartButton"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="16dp"
+            android:text="Time"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/StartButton"
+            android:layout_alignEnd="@+id/distanceLabel"
+            android:layout_marginEnd="37dp"
+            android:text="0m"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/StartButton"
+            android:layout_alignStart="@+id/timeLabel"
+            android:text="00:00"
+            android:textSize="25sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/StartButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:onClick="Start"
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            android:visibility="visible"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="8dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/StopButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="Stop"
+            android:src="@drawable/ic_pause_black_24dp"
+            android:visibility="invisible"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="8dp" />
 
     </RelativeLayout>
 
 
 </LinearLayout>
+

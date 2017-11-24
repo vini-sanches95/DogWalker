@@ -15,26 +15,26 @@ import android.widget.Spinner;
 
 import java.io.IOException;
 
-public class ProfileActivity extends AppCompatActivity {
+public class PetProfileActivity extends AppCompatActivity {
 
-    String[] genero = {"Masculino", "Faminino", "Outro"};
+    String[] animal = {"Cachorro", "Gato", "Coelho", "Cavalo", "Outro"};
     int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_pet_profile);
 
-        Spinner spinner = (Spinner) findViewById(R.id.generoSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinnertext, genero);
+        Spinner spinner = (Spinner) findViewById(R.id.petSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinnertext, animal);
         spinner.setAdapter(adapter);
 
-        RelativeLayout rl = (RelativeLayout)findViewById(R.id.relativeLayout);
-        rl.setBackgroundColor(Color.YELLOW);
+        RelativeLayout rl = (RelativeLayout)findViewById(R.id.relativeLayoutPet);
+        rl.setBackgroundColor(Color.RED);
 
     }
 
-    public void ChangeProfilePic(View view){
+    public void ChangePetPic(View view){
         Intent intent = new Intent();
 // Show only images, no videos or anything else
         intent.setType("image/*");
