@@ -1,5 +1,6 @@
 package mds.dogwalker;
 
+import android.graphics.Bitmap;
 import android.provider.ContactsContract;
 
 import java.util.Date;
@@ -14,6 +15,7 @@ enum tipoGenero {Masculino, Feminino, Outro}
 public class Profile {
 
     int id;
+    Bitmap picture;
     String nome;
     String sobrenome;
     String senha;
@@ -25,7 +27,7 @@ public class Profile {
 
     Profile(){}
 
-    Profile(int i, String n, String s, String p, Date nasc, ContactsContract.CommonDataKinds.Email e, tipoGenero g){
+    Profile(int i, String n, String s, Bitmap pic, String p, Date nasc, ContactsContract.CommonDataKinds.Email e, tipoGenero g){
         id = i;
         nome = n;
         sobrenome = s;
@@ -33,6 +35,7 @@ public class Profile {
         genero = g;
         senha = p;
         nascimento = nasc;
+        picture = pic;
     }
 
     public List<Pet> GetPets(){
@@ -85,5 +88,13 @@ public class Profile {
 
     public tipoGenero GetGenero(){
         return genero;
+    }
+
+    public void SetPicture(Bitmap pic){
+        picture = pic;
+    }
+
+    public Bitmap GetPicture(){
+        return picture;
     }
 }
