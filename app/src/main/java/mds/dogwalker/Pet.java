@@ -1,5 +1,7 @@
 package mds.dogwalker;
 
+import android.graphics.Bitmap;
+
 import java.util.Date;
 
 /**
@@ -11,6 +13,7 @@ enum animal {Cachorro, Gato, Coelho, Cavalo, Outro}
 public class Pet {
 
     int id;
+    Bitmap picture;
     String nome;
     animal tipoAnimal;
     String raca;
@@ -19,7 +22,7 @@ public class Pet {
     boolean castrado;
     float peso;
 
-    Pet(int i, String n, animal a, String r, float p, Date nasc, tipoGenero g, boolean c){
+    Pet(int i, String n, Bitmap pic, animal a, String r, float p, Date nasc, tipoGenero g, boolean c){
         id = i;
         nome = n;
         tipoAnimal = a;
@@ -28,6 +31,7 @@ public class Pet {
         castrado = c;
         genero = g;
         nascimento = nasc;
+        picture = pic;
     }
 
     Pet(){}
@@ -86,6 +90,14 @@ public class Pet {
 
     public float GetPeso(){
         return peso;
+    }
+
+    public void SetPicture(Bitmap pic){
+        picture = pic;
+    }
+
+    public Bitmap GetPicture(){
+        return picture;
     }
 
 }

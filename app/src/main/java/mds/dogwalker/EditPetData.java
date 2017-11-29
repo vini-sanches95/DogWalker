@@ -2,39 +2,43 @@ package mds.dogwalker;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import java.io.IOException;
 
-public class ProfileActivity extends AppCompatActivity {
+public class EditPetData extends AppCompatActivity {
 
-    String[] genero = {"Masculino", "Faminino", "Outro"};
+
+    String[] animal = {"Cachorro", "Gato", "Coelho", "Cavalo", "Outro"};
     int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_edit_pet_data);
 
-        Spinner spinner = (Spinner) findViewById(R.id.generoSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinnertext, genero);
+        Spinner spinner = (Spinner) findViewById(R.id.petSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinnertext, animal);
         spinner.setAdapter(adapter);
 
-        RelativeLayout rl = (RelativeLayout)findViewById(R.id.relativeLayout);
-        rl.setBackgroundColor(Color.YELLOW);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
     }
 
-    public void ChangeProfilePic(View view){
+    public void ChangePetPic(View view){
         Intent intent = new Intent();
 // Show only images, no videos or anything else
         intent.setType("image/*");
@@ -55,12 +59,11 @@ public class ProfileActivity extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
 
-                ImageView imageView = (ImageView) findViewById(R.id.profile_image);
+                ImageView imageView = (ImageView) findViewById(R.id.pet_image);
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-
 }
