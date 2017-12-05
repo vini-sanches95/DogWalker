@@ -52,18 +52,23 @@
         <activity
             android:name=".EditProfileData"
             android:label="@string/title_activity_edit_profile_data"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".EditPetData"
+            android:label="@string/title_activity_edit_pet_data"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity
-            android:name=".EditPetData"
-            android:label="@string/title_activity_edit_pet_data"
+            android:name=".MenuLateralActivity"
+            android:label="@string/title_activity_menu_lateral"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
