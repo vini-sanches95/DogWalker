@@ -1,8 +1,12 @@
 package mds.dogwalker;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.provider.ContactsContract;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +16,7 @@ import java.util.List;
 
 enum tipoGenero {Masculino, Feminino, Outro}
 
-public class Profile {
+public class Profile implements Parcelable {
 
     int id;
     Bitmap picture;
@@ -20,14 +24,14 @@ public class Profile {
     String sobrenome;
     String senha;
     Date nascimento;
-    ContactsContract.CommonDataKinds.Email email;
-    tipoGenero genero;
+    String email;
+    String genero;
     List<Pet> pets;
     //String local;
 
     Profile(){}
 
-    Profile(int i, String n, String s, Bitmap pic, String p, Date nasc, ContactsContract.CommonDataKinds.Email e, tipoGenero g){
+    Profile(int i, String n, String s, Bitmap pic, String p, Date nasc, String e, String g){
         id = i;
         nome = n;
         sobrenome = s;
@@ -66,11 +70,11 @@ public class Profile {
         sobrenome = s;
     }
 
-    public void SetEmail(ContactsContract.CommonDataKinds.Email e){
+    public void SetEmail(String e){
         email = e;
     }
 
-    public void SetGenero(tipoGenero g){
+    public void SetGenero(String g){
         genero = g;
     }
 
@@ -82,11 +86,11 @@ public class Profile {
         return sobrenome;
     }
 
-    public ContactsContract.CommonDataKinds.Email GetEmail(){
+    public String GetEmail(){
         return email;
     }
 
-    public tipoGenero GetGenero(){
+    public String GetGenero(){
         return genero;
     }
 
@@ -97,4 +101,48 @@ public class Profile {
     public Bitmap GetPicture(){
         return picture;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeParcelable(this.picture, flags);
+        dest.writeString(this.nome);
+        dest.writeString(this.sobrenome);
+        dest.writeString(this.senha);
+        dest.writeLong(this.nascimento != null ? this.nascimento.getTime() : -1);
+        dest.writeString(this.email);
+        dest.writeString(this.genero);
+        dest.writeList(this.pets);
+    }
+
+    protected Profile(Parcel in) {
+        this.id = in.readInt();
+        this.picture = in.readParcelable(Bitmap.class.getClassLoader());
+        this.nome = in.readString();
+        this.sobrenome = in.readString();
+        this.senha = in.readString();
+        long tmpNascimento = in.readLong();
+        this.nascimento = tmpNascimento == -1 ? null : new Date(tmpNascimento);
+        this.email = in.readString();
+        this.genero = in.readString();
+        this.pets = new ArrayList<Pet>();
+        in.readList(this.pets, Pet.class.getClassLoader());
+    }
+
+    public static final Creator<Profile> CREATOR = new Creator<Profile>() {
+        @Override
+        public Profile createFromParcel(Parcel source) {
+            return new Profile(source);
+        }
+
+        @Override
+        public Profile[] newArray(int size) {
+            return new Profile[size];
+        }
+    };
 }

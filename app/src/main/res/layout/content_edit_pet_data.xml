@@ -28,7 +28,7 @@
             android:textSize="24dp" />
 
         <EditText
-            android:id="@+id/edit_pet_nome"
+            android:id="@+id/edit_pet_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -83,7 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SAVE"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="SavePet"/>
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

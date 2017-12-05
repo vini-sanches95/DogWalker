@@ -2,18 +2,21 @@ package mds.dogwalker;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class EditPetData extends AppCompatActivity {
@@ -21,6 +24,9 @@ public class EditPetData extends AppCompatActivity {
 
     String[] animal = {"Cachorro", "Gato", "Coelho", "Cavalo", "Outro"};
     int PICK_IMAGE_REQUEST = 1;
+    EditText nomeDoMeuPet, racaPet, pesoPet;
+    Spinner tipoDoMeuPet;
+    ImageView petPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +38,27 @@ public class EditPetData extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
+        nomeDoMeuPet = (EditText)findViewById(R.id.edit_pet_name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        racaPet = (EditText)findViewById(R.id.edit_raca);
+        pesoPet = (EditText)findViewById(R.id.edit_peso);
+        tipoDoMeuPet = (Spinner)findViewById(R.id.petSpinner);
+        petPic = (ImageView)findViewById(R.id.edit_pet_image);
 
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            nomeDoMeuPet.setText((String)extras.get("NomeToEdit"));
+            racaPet.setText((String)extras.get("RacaToEdit"));
+            pesoPet.setText((String) extras.get("PesoToEdit"));
+            //tipoDoMeuPet.setText((String)extras.get("TipoPet"));
+            tipoDoMeuPet.setSelection(((ArrayAdapter<String>)tipoDoMeuPet.getAdapter()).getPosition((String)extras.get("TipoToEdit")));
+            Bitmap pic = BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra("PicToEdit"),
+                    0, getIntent().getByteArrayExtra("PicToEdit").length);
+            petPic.setImageBitmap(pic);
+        }
     }
 
     public void ChangePetPic(View view){
@@ -59,11 +82,24 @@ public class EditPetData extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
 
-                ImageView imageView = (ImageView) findViewById(R.id.pet_image);
+                ImageView imageView = (ImageView) findViewById(R.id.edit_pet_image);
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void SavePet(View view){
+        Intent intent = new Intent(this, PetProfileScroll.class);
+        intent.putExtra("PetEdit", nomeDoMeuPet.getText().toString());
+        intent.putExtra("PetRaca", racaPet.getText().toString());
+        intent.putExtra("PesoPet", pesoPet.getText().toString());
+        intent.putExtra("TipoPet", tipoDoMeuPet.getSelectedItem().toString());
+        ByteArrayOutputStream bs = new ByteArrayOutputStream();
+        Bitmap pic = ((BitmapDrawable)petPic.getDrawable()).getBitmap();
+        pic.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        intent.putExtra("PetPic", bs.toByteArray());
+        startActivity(intent);
     }
 }
