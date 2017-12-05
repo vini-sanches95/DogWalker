@@ -109,4 +109,8 @@
     <string name="title_activity_pet_profile_scroll">PetProfileScroll</string>
     <string name="title_activity_edit_profile_data">EditProfileData</string>
     <string name="title_activity_edit_pet_data">EditPetData</string>
+    <string name="title_activity_menu_lateral">MenuLateralActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
