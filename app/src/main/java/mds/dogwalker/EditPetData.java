@@ -98,7 +98,7 @@ public class EditPetData extends AppCompatActivity {
         intent.putExtra("TipoPet", tipoDoMeuPet.getSelectedItem().toString());
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Bitmap pic = ((BitmapDrawable)petPic.getDrawable()).getBitmap();
-        pic.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        pic.compress(Bitmap.CompressFormat.JPEG, 20, bs);
         intent.putExtra("PetPic", bs.toByteArray());
         startActivity(intent);
     }

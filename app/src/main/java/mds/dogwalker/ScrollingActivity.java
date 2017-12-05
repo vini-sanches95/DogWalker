@@ -66,7 +66,7 @@ public class ScrollingActivity extends AppCompatActivity {
         intent.putExtra("PaisToEdit", Pais.getText().toString());
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Bitmap pic = ((BitmapDrawable)Picture.getDrawable()).getBitmap();
-        pic.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        pic.compress(Bitmap.CompressFormat.JPEG, 20, bs);
         intent.putExtra("PictureToEdit", bs.toByteArray());
         startActivity(intent);
     }

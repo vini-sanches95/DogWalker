@@ -110,7 +110,7 @@ public class EditProfileData extends AppCompatActivity {
         intent.putExtra("ProfileGenero", Genero.getSelectedItem().toString());
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Bitmap pic = ((BitmapDrawable)Picture.getDrawable()).getBitmap();
-        pic.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        pic.compress(Bitmap.CompressFormat.JPEG, 20, bs);
         intent.putExtra("ProfilePicture", bs.toByteArray());
         intent.putExtra("ProfilePais", Pais.getText().toString());
 

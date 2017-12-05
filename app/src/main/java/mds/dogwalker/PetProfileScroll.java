@@ -55,7 +55,7 @@ public class PetProfileScroll extends AppCompatActivity {
         intent.putExtra("TipoToEdit", Tipo.getText().toString());
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Bitmap pic = ((BitmapDrawable)Pic.getDrawable()).getBitmap();
-        pic.compress(Bitmap.CompressFormat.PNG, 50, bs);
+        pic.compress(Bitmap.CompressFormat.JPEG, 20, bs);
         intent.putExtra("PicToEdit", bs.toByteArray());
         startActivity(intent);
     }
