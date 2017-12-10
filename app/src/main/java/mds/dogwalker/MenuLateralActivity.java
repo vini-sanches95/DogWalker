@@ -82,7 +82,7 @@ public class MenuLateralActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            Intent intent = new Intent(MenuLateralActivity.this, EditProfileData.class);
+            Intent intent = new Intent(MenuLateralActivity.this, ScrollingActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_pets) {
             Intent intent = new Intent(MenuLateralActivity.this, PetProfileScroll.class);
