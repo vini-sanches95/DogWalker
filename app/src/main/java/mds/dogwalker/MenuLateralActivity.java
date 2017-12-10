@@ -82,14 +82,27 @@ public class MenuLateralActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            Intent intent = new Intent(MenuLateralActivity.this, EditProfileData.class);
+            startActivity(intent);
         } else if (id == R.id.nav_pets) {
+            Intent intent = new Intent(MenuLateralActivity.this, PetProfileScroll.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_passeio) {
+            Intent intent = new Intent(MenuLateralActivity.this, MapsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_alarme) {
 //            Intent intent = new Intent(MenuLateralActivity.this, AlarmeActivity.class);
 //            startActivity(intent);
 
+        } else if (id == R.id.nav_addPets) {
+            Intent intent = new Intent(MenuLateralActivity.this, EditPetData.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_config) {
+
+
 
         } else if (id == R.id.nav_share) {
 
