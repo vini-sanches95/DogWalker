@@ -42,9 +42,7 @@
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".PetProfileScroll"
             android:label="@string/title_activity_pet_profile_scroll"
@@ -52,26 +50,25 @@
         <activity
             android:name=".EditProfileData"
             android:label="@string/title_activity_edit_profile_data"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".EditPetData"
             android:label="@string/title_activity_edit_pet_data"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".MenuLateralActivity"
             android:label="@string/title_activity_menu_lateral"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter><action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".AlarmeActivity"
+            android:label="@string/title_activity_alarme"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

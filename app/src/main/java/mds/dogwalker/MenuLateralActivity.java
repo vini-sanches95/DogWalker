@@ -93,8 +93,8 @@ public class MenuLateralActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_alarme) {
-//            Intent intent = new Intent(MenuLateralActivity.this, AlarmeActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MenuLateralActivity.this, AlarmeActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addPets) {
             Intent intent = new Intent(MenuLateralActivity.this, EditPetData.class);
