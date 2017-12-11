@@ -75,7 +75,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ConfiguracoesActivity"
-            android:label="@string/title_activity_configuracoes"></activity>
+            android:label="@string/title_activity_configuracoes"/>
+
+        <receiver android:name=".AlarmReceiver"/>
+        <service android:name=".RingtonePlayingService"
+            android:enabled="true"/>
     </application>
 
 </manifest>
