@@ -19,7 +19,6 @@ import android.view.MenuItem;
 
 import com.google.android.gms.maps.SupportMapFragment;
 
-import static mds.dogwalker.R.id.mapa_fragment;
 
 public class MenuLateralActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,9 +35,6 @@ public class MenuLateralActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.frame_mapa);
-//        navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction tx = manager.beginTransaction();
@@ -66,22 +62,6 @@ public class MenuLateralActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -108,9 +88,6 @@ public class MenuLateralActivity extends AppCompatActivity
         } else if (id == R.id.nav_config) {
             Intent intent = new Intent(MenuLateralActivity.this, ConfiguracoesActivity.class);
             startActivity(intent);
-
-
-        } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_logout) {
 
