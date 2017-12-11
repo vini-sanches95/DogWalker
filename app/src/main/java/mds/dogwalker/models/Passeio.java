@@ -1,5 +1,7 @@
 package mds.dogwalker.models;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.sql.Time;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class Passeio {
 
     int id;
     float distancia;
-    Caminho caminho;
+    public Caminho caminho;
     Time duracao;
     Profile usuario;
     List<Pet> pets;
@@ -34,11 +36,13 @@ public class Passeio {
         return  pets;
     }
 
-    public void AddCoco(){
+    public void AddCoco(LatLng pos){
+        caminho.addPoop(pos);
         coco++;
     }
 
-    public void AddXixi(){
+    public void AddXixi(LatLng pos){
+        caminho.addPee(pos);
         xixi++;
     }
 

@@ -40,7 +40,12 @@
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".activities.AuthenticationActivity" />
+        <activity android:name=".activities.AuthenticationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.ResetPasswordActivity" />
         <activity
@@ -63,11 +68,7 @@
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_menu_lateral"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.AlarmeActivity"
