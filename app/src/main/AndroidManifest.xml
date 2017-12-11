@@ -73,6 +73,11 @@
             android:name=".AlarmesListaActivity"
             android:label="@string/title_activity_alarmes_lista"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <receiver android:name=".AlarmReceiver"/>
+        <service android:name=".RingtonePlayingService"
+            android:enabled="true"/>
+
     </application>
 
 </manifest>
