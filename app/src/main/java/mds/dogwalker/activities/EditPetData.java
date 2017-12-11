@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -14,10 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
+import mds.dogwalker.utils.PetProfileScroll;
+import mds.dogwalker.R;
 
 public class EditPetData extends AppCompatActivity {
 

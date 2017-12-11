@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.activities;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -20,6 +20,9 @@ import android.text.TextUtils;
 import android.view.MenuItem;
 
 import java.util.List;
+
+import mds.dogwalker.utils.AppCompatPreferenceActivity;
+import mds.dogwalker.R;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On

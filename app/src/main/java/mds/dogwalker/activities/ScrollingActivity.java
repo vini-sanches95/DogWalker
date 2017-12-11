@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+
+import mds.dogwalker.R;
 
 public class ScrollingActivity extends AppCompatActivity {
 

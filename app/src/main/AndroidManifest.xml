@@ -34,29 +34,29 @@
             android:value="AIzaSyCgp9vGmHhDbDuO-SVcyzu23ui0NYDy9Qc" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".AuthenticationActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".activities.AuthenticationActivity" />
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.ResetPasswordActivity" />
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".activities.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PetProfileScroll"
+            android:name=".utils.PetProfileScroll"
             android:label="@string/title_activity_pet_profile_scroll"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EditProfileData"
+            android:name=".activities.EditProfileData"
             android:label="@string/title_activity_edit_profile_data"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EditPetData"
+            android:name=".activities.EditPetData"
             android:label="@string/title_activity_edit_pet_data"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MenuLateralActivity"
+            android:name=".activities.MenuLateralActivity"
             android:label="@string/title_activity_menu_lateral"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -66,19 +66,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AlarmeActivity"
+            android:name=".activities.AlarmeActivity"
             android:label="@string/title_activity_alarme"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AlarmesListaActivity"
+            android:name=".activities.AlarmesListaActivity"
             android:label="@string/title_activity_alarmes_lista"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ConfiguracoesActivity"
+            android:name=".activities.ConfiguracoesActivity"
             android:label="@string/title_activity_configuracoes"/>
 
-        <receiver android:name=".AlarmReceiver"/>
-        <service android:name=".RingtonePlayingService"
+        <receiver android:name=".utils.AlarmReceiver"/>
+        <service android:name=".utils.RingtonePlayingService"
             android:enabled="true"/>
     </application>
 

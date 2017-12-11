@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.models;
 
 import android.graphics.Bitmap;
 

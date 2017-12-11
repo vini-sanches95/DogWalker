@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.utils;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,6 +10,9 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
+
+import mds.dogwalker.R;
+import mds.dogwalker.activities.AlarmeActivity;
 
 
 public class RingtonePlayingService extends Service {

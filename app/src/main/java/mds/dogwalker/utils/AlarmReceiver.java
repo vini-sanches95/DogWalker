@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.utils;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

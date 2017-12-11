@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="mds.dogwalker.EditPetData"
+    tools:context="mds.dogwalker.activities.EditPetData"
     tools:showIn="@layout/activity_edit_pet_data">
 
     <LinearLayout

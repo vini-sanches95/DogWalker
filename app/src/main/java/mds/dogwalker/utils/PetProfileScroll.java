@@ -1,13 +1,10 @@
-package mds.dogwalker;
+package mds.dogwalker.utils;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+
+import mds.dogwalker.R;
+import mds.dogwalker.activities.EditPetData;
 
 public class PetProfileScroll extends AppCompatActivity {
 

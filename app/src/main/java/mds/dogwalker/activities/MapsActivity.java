@@ -1,19 +1,17 @@
-package mds.dogwalker;
+package mds.dogwalker.activities;
 
-import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import mds.dogwalker.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -23,7 +21,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
 
     }
 
@@ -55,9 +52,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toast.makeText(MapsActivity.this, "Pee Added!", Toast.LENGTH_SHORT).show();
     }
 
-    public void BurgerMenu(View view){
-        Toast.makeText(MapsActivity.this, "Burger menu works!", Toast.LENGTH_SHORT).show();
-    }
 
     public void Start(View view){
         View stop = findViewById(R.id.StopButton);

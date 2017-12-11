@@ -1,4 +1,4 @@
-package mds.dogwalker;
+package mds.dogwalker.models;
 
 import java.sql.Time;
 import java.util.List;

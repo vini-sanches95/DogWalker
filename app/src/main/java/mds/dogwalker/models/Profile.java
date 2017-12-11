@@ -1,11 +1,9 @@
-package mds.dogwalker;
+package mds.dogwalker.models;
 
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.provider.ContactsContract;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
