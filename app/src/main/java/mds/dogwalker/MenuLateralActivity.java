@@ -106,7 +106,8 @@ public class MenuLateralActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_config) {
-
+            Intent intent = new Intent(MenuLateralActivity.this, ConfiguracoesActivity.class);
+            startActivity(intent);
 
 
         } else if (id == R.id.nav_share) {
