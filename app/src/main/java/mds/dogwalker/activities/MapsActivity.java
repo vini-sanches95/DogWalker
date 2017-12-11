@@ -43,7 +43,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
+          mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
     }
 
     public void AddPoop(View view){

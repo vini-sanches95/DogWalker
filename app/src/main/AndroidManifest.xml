@@ -57,11 +57,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.EditPetData"
-            android:label="@string/title_activity_edit_pet_data"
+            android:label="Editar Dados do Pet"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/title_activity_menu_lateral"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -35,6 +35,7 @@ public class AlarmeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         this.context = this;
 
+
         // Inicializa o alarm manager
         alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
