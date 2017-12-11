@@ -41,6 +41,8 @@ public class EditPetData extends AppCompatActivity {
         nomeDoMeuPet = (EditText)findViewById(R.id.edit_pet_name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getActionBar();
+
 
         racaPet = (EditText)findViewById(R.id.edit_raca);
         pesoPet = (EditText)findViewById(R.id.edit_peso);

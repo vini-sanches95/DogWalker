@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        app:expanded="true">
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/edit_pet_image"
@@ -20,13 +20,12 @@
             android:layout_height="140dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="12dp"
             android:src="@mipmap/pet"
             app:civ_border_color="#FF000000"
             app:civ_border_width="12dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="12dp"
-            app:civ_circle_background_color="#FFFFFFFF"
-            />
+            app:civ_circle_background_color="#FFFFFFFF" />
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_edit_pet_data" />
@@ -40,18 +39,18 @@
         app:layout_anchorGravity="bottom|end"
         android:src="@drawable/add_pic"
         android:clickable="true"
-        android:onClick="ChangePetPic"/>
+        android:onClick="ChangePetPic" android:focusable="true"/>
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/menuButton_editPet"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:src="@drawable/ic_menu_black_24dp"
         app:civ_border_color="#FF000000"
-        app:civ_border_width="0dp" />
+        app:civ_border_width="0dp" android:focusable="true"/>
 
 </android.support.design.widget.CoordinatorLayout>
